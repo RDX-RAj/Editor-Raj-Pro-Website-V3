@@ -1,4 +1,4 @@
-const CACHE_NAME='editor-raj-v5';
+const CACHE_NAME='editor-raj-v6';
 const STATIC_ASSETS=['./','./index.html','./style.css','./manifest.json'];
 
 self.addEventListener('install',event=>{
