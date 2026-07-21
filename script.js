@@ -134,3 +134,14 @@ resize();animate();addEventListener('resize',resize);
 
 if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
 loadLive();
+
+
+// Pro V6: scroll progress indicator
+const scrollProgress = document.createElement('div');
+scrollProgress.className = 'scroll-progress';
+document.body.appendChild(scrollProgress);
+
+addEventListener('scroll', () => {
+  const maxScroll = document.documentElement.scrollHeight - innerHeight;
+  scrollProgress.style.width = (maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0) + '%';
+});
